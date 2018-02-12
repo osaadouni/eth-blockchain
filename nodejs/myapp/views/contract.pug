@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title} - Smart Contract
+
+  <h2>Ask a Yes or No Question</h2>
+
+   // register form
+   form(method='POST' action='/contract')
+          div.form-group
+            label(for='name') Question:
+            input#name.form-control(type='text', placeholder='Enter a question' name='question')
+          button.btn.btn-primary(type='submit') Submit 

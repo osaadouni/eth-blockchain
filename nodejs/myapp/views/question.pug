@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    
+  
+  p contractAddress #{contractAddress} 
+  p question #{question} 
+  p currentAnswerInt #{currentAnswerInt} 
+  p trues #{trues} 
+  p falses #{falses} 
+
+  <h2>Ask a Yes or No Question</h2>
+
+    // register form
+    form(method='POST' action='/contract/questions')
+
+        div.radio
+            label #[input(type='radio', name='answer', value='true', checked='')] True
+        div.radio
+            label #[input(type='radio', name='answer', value='false', checked='')] False
+
+        input(type='hidden', name='address', value=contractAddress, checked='') 
+        button.btn.btn-primary(type='submit') Submit 
+
+
